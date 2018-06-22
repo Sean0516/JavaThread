@@ -7,11 +7,12 @@ package com.voicecyber.synchronizied;
  */
 public class CountNum {
     private int num=0;
-
     public int getNum() {
         return num;
     }
-    synchronized public void count(){
-        num++;
+    public void count() throws InterruptedException {
+        synchronized (this){
+            num++;
+        }
     }
 }
