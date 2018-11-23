@@ -10,7 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class GetNum implements Runnable{
     private  int num;
-    private Lock lock=new ReentrantLock();
+    private Lock lock=new ReentrantLock(true);
 
     public GetNum(int num) {
         this.num = num;
@@ -18,11 +18,13 @@ public class GetNum implements Runnable{
 
     @Override
     public void run() {
-        lock.lock();
+
         for (int i = 0; i <5 ; i++) {
+            lock.lock();
             num++;
             System.out.println(Thread.currentThread().getName()+"num:" +num);
+            lock.unlock();
         }
-        lock.unlock();
+
     }
 }

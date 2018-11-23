@@ -17,9 +17,12 @@ public class Test {
         writeThread.setName("write 线程 1");
         readThread1.setName("read 线程 2 ");
         writeThread1.setName("write 线程 2");
+
         writeThread.start();
         readThread1.start();
+        readThread.start();
         writeThread1.start();
+
 
 
 

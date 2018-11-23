@@ -17,5 +17,7 @@ public class Test {
         thread.start();
         thread1.start();
         thread2.start();
+        thread.join();
+        System.out.println("111111111111111");
     }
 }

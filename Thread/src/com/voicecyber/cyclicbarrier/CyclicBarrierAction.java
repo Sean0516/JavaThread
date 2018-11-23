@@ -9,6 +9,6 @@ public class CyclicBarrierAction implements Runnable{
 
     @Override
     public void run() {
-        System.out.println("CyclicBarrierAction 当所有线程都到达屏障区时，我先执行");
+        System.out.println("CyclicBarrierAction 当所有线程都到达屏障区时，我再执行");
     }
 }
