@@ -14,6 +14,7 @@ public class ThreadByCallAble implements Callable {
         for (int i = 0; i <10 ; i++) {
             sum++;
         }
+        Thread.sleep(2000);
         return sum;
     }
 }
