@@ -13,7 +13,7 @@ public class CompletableFutureSync {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(10, 20, 100, TimeUnit.SECONDS, new ArrayBlockingQueue<>(10),
                 (r -> {
                     Thread thread = new Thread(r);
-                    thread.setName("Test Pool Name" + thread.getName());
+                    thread.setName("TestSemaphore Pool Name" + thread.getName());
                     thread.setDaemon(true);
                     return thread;
                 }));

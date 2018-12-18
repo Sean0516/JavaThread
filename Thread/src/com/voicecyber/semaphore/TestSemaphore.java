@@ -9,7 +9,7 @@ import java.util.concurrent.Semaphore;
  *
  * @author Sean
  */
-public class Test {
+public class TestSemaphore {
     private static  final  int THREAD_POOL_SIZE=20;
     private  static ExecutorService executorService= Executors.newFixedThreadPool(THREAD_POOL_SIZE);
     private static Semaphore semaphore=new Semaphore(10);
@@ -21,9 +21,12 @@ public class Test {
                     semaphore.acquire();
                     System.out.println(Thread.currentThread().getName()+"save data");
                     Thread.sleep(2*1000);
-                    semaphore.release();
+                    System.out.println("还有："+semaphore.getQueueLength() +" 个线程在等待信号量");
+                    System.out.println("是否还有线程在等待信号量: "+semaphore.hasQueuedThreads());
                 } catch (InterruptedException e) {
                     e.printStackTrace();
+                }finally {
+                    semaphore.release();
                 }
             });
         }

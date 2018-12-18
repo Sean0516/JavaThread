@@ -13,7 +13,9 @@ public class Test {
         ExchangeA exchangeA=new ExchangeA(exchanger);
         ExchangeB exchangeB=new ExchangeB(exchanger);
         Thread threadA=new Thread(exchangeA);
+        threadA.setName("Thread A");
         Thread threadB=new Thread(exchangeB);
+        threadB.setName("Thread B");
         threadA.start();
         threadB.start();
     }

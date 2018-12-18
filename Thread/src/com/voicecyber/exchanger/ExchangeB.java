@@ -16,10 +16,9 @@ public class ExchangeB implements Runnable {
 
     @Override
     public void run() {
-        String B="ExchangeB";
+        String B="Exchange B";
         try {
-            String A=exchanger.exchange(B);
-            System.out.println("A 的数据是"+A +"____B的数据是"+B);
+            System.out.println(Thread.currentThread().getName()+ "获得线程A的数据是 ："+exchanger.exchange(B));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
